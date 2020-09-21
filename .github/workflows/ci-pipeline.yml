@@ -20,5 +20,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
+      - name: Settings
+        run: apt-get install -y sshpass
+
+      # Runs a single command using the runners shell
       - name: Deploy Node.js
         run: sshpass -p ${{ secrets.MY_SERVER_PASSWORD }} ssh ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/${{ secrets.MY_SERVER_USER_ID }}/test-deploy.sh
