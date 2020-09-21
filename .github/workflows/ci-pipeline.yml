@@ -25,4 +25,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy Node.js
-        run: sshpass -p ${{ secrets.MY_SERVER_PASSWORD }} ssh ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/${{ secrets.MY_SERVER_USER_ID }}/test-deploy.sh
+        run: sshpass -p ${{ secrets.MY_SERVER_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/${{ secrets.MY_SERVER_USER_ID }}/test-deploy.sh
