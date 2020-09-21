@@ -21,6 +21,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: sshpass -p${{ secrets.MY_SERVER_PASSWORD }} ssh ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/action-test/test-deploy.sh
+    - run: sshpass -p${{ secrets.MY_SERVER_PASSWORD }} ssh ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/${{ secrets.MY_SERVER_USER_ID }}/test-deploy.sh
       env:
         CI: true
