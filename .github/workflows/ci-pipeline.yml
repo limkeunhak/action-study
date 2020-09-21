@@ -21,7 +21,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Settings
-        run: apt-get install -y sshpass
+        run: sudo apt-get install -y sshpass
 
       # Runs a single command using the runners shell
       - name: Deploy Node.js
