@@ -7,14 +7,12 @@ name: CI Pipeline
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy Node.js
-    - run: sshpass -p ${{ secrets.MY_SERVER_PASSWORD }} ssh ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/${{ secrets.MY_SERVER_USER_ID }}/test-deploy.sh
+      - uses: actions/checkout@v2
+      - name: Deploy Node.js
+      - run: sshpass -p ${{ secrets.MY_SERVER_PASSWORD }} ssh ${{ secrets.MY_SERVER_USER_ID }}@${{ secrets.MY_SERVER_IP }} /home/${{ secrets.MY_SERVER_USER_ID }}/test-deploy.sh
